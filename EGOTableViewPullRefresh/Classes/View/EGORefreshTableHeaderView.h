@@ -38,19 +38,19 @@ typedef enum{
 	
 	id _delegate;
 	EGOPullRefreshState _state;
-
-	UILabel *_lastUpdatedLabel;
-	UILabel *_statusLabel;
+    
 	CALayer *_arrowImage;
 	UIActivityIndicatorView *_activityView;
 	
-
+    
 }
 
+@property (nonatomic, retain) UILabel *lastUpdatedLabel;
+@property (nonatomic, retain) UILabel *statusLabel;
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
 @property(nonatomic,assign) id <EGORefreshTableHeaderDelegate> delegate;
 
 - (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor;
-- (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor shadowColor:(UIColor *)shadowColor activityIndicatorStyle:(UIActivityIndicatorViewStyle)activityIndicatorStyle;
 
 - (void)refreshLastUpdatedDate;
 - (void)egoRefreshScrollViewDidScroll:(UIScrollView *)scrollView;
